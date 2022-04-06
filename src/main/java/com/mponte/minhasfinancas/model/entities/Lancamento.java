@@ -18,6 +18,7 @@ import java.util.Objects;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Lancamento {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

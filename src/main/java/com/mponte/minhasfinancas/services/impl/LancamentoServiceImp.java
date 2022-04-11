@@ -119,7 +119,7 @@ public class LancamentoServiceImp implements LancamentoService {
         return receitas.subtract(despesas);
     }
 
-    private void atualizaLancamento(Lancamento lancamento, Lancamento lancamentoAtualizacao) {
+    public void atualizaLancamento(Lancamento lancamento, Lancamento lancamentoAtualizacao) {
         lancamento.setDescricao(lancamentoAtualizacao.getDescricao());
         lancamento.setMes(lancamentoAtualizacao.getMes());
         lancamento.setAno(lancamentoAtualizacao.getAno());
@@ -129,7 +129,7 @@ public class LancamentoServiceImp implements LancamentoService {
         lancamento.setStatus(lancamentoAtualizacao.getStatus());
     }
 
-    private Lancamento converterDTO(LancamentoDTO dto){
+    public Lancamento converterDTO(LancamentoDTO dto){
         Usuario usuario = usuarioService.findById(dto.getUsuario());
         Lancamento lancamento = new Lancamento();
         lancamento.setDescricao(dto.getDescricao());
@@ -147,7 +147,7 @@ public class LancamentoServiceImp implements LancamentoService {
         return lancamento;
     }
 
-    private Lancamento obterLancamentoPorId(Long id){
+    public Lancamento obterLancamentoPorId(Long id){
         return lancamentoRepository.findById(id)
                 .orElseThrow(() -> new ObjetoNaoEncontradoException("não foi encontrado um lançamento com o id: "+id));
     }

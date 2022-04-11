@@ -2,7 +2,6 @@ package com.mponte.minhasfinancas.controllers;
 
 import com.mponte.minhasfinancas.model.dtos.UsuarioDTO;
 import com.mponte.minhasfinancas.model.entities.Usuario;
-import com.mponte.minhasfinancas.services.exceptions.RegraNegocioException;
 import com.mponte.minhasfinancas.services.interfaces.LancamentoService;
 import com.mponte.minhasfinancas.services.interfaces.UsuarioService;
 import org.springframework.http.HttpStatus;

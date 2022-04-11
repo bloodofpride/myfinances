@@ -1,13 +1,13 @@
 package com.mponte.minhasfinancas.model.dtos;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class LancamentoDTO implements Serializable {
     private static final long serialVersionUID = -3208666400086174924L;

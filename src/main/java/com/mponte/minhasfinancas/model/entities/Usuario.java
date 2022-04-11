@@ -1,5 +1,6 @@
 package com.mponte.minhasfinancas.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -19,6 +20,7 @@ public class Usuario {
     private Long id;
     private String nome;
     private String email;
+    @JsonIgnore
     private String senha;
 
     @Override

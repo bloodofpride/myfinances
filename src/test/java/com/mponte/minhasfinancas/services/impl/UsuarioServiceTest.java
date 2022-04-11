@@ -1,12 +1,10 @@
-package com.mponte.minhasfinancas.services.interfaces;
+package com.mponte.minhasfinancas.services.impl;
 
 import com.mponte.minhasfinancas.model.entities.Usuario;
 import com.mponte.minhasfinancas.repositories.UsuarioRepository;
 import com.mponte.minhasfinancas.services.exceptions.ErroAutenticacao;
 import com.mponte.minhasfinancas.services.exceptions.ObjetoNaoEncontradoException;
 import com.mponte.minhasfinancas.services.exceptions.RegraNegocioException;
-import com.mponte.minhasfinancas.services.impl.UsuarioServiceImpl;
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -26,7 +24,7 @@ import static org.mockito.Mockito.*;
 public class UsuarioServiceTest {
 
     @InjectMocks @Spy
-    UsuarioServiceImpl usuarioService;
+    private UsuarioServiceImpl usuarioService;
 
     @Mock
     private UsuarioRepository usuarioRepository;
@@ -69,10 +67,6 @@ public class UsuarioServiceTest {
                 .build();
         doThrow(RegraNegocioException.class).when(usuarioService).validarEmail(email);
 
-        //ação
-        Exception exception = assertThrows(RegraNegocioException.class, () -> {
-            usuarioService.salvarUsuario(usuario);
-        });
 //        try {
 //            Usuario usuarioNaoSalvo = usuarioService.salvarUsuario(usuario);
 //            fail();
